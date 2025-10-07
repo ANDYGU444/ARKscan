@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link href="css\styles.css" rel="stylesheet" type="text/css">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>ARKScan.com</title>
+    
+
+
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="images\ARK LOGOP.png" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">ARK</span>
+                    <span class="profession">Scanlation</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>    
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" id="search-bar" placeholder="Buscar cómic..." onkeyup="searchComics()">
+                    <div id="search-results" class="search-results"></div>
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="catalog.html">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Catálogo</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="emision.html">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Emisión</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="login.html">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Iniciar Sesión</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="register.html">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Registrarse</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="admin.html">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Light mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                <li>
+                </li>
+            </div>
+        </div>
+
+    </nav>
+    <section class="home">
+    
+        <div class="text">Inicio</div>
+        <h1></h1>
+        <header>
+            <div class="top-bar">
+                <li class="search-box" onclick="toggleSearchBar()"><i class='bx bx-search icon'></i></li>
+                <input type="text" id="search-input" placeholder="Buscar en el catálogo" oninput="filterCatalog()">
+                <div id="search-results" class="search-results">
+                    <div class="search-button">
+                        <button onclick="searchComics()">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <h1>Nuevos Episodios</h1>
+        <div class="comic-container"> 
+            <div class="comic"> <!-- href=para dirigir a pagina de lectura con cod de cap -->
+                <a href="Manhwas\Solo Leveling - Manhwa - ARKscan\ver.html"><img src="Manhwas\Solo Leveling - Manhwa - ARKscan\solo_leveling.png" alt="Solo Leveling"></a>
+                <h3>Solo Leveling</h3>
+                <p>Hace 1 día <span class="icon-eye"></span></p>
+            </div>
+            <div class="comic">
+                <img src='images/shadows_of_the_void.jpg'alt="Shadows Of The Void">
+                <h3>Shadows Of The Void</h3>
+                <p>Hace 3 días <span class="icon-eye"></span></p>
+            </div>
+            <!-- Más cómics -->
+        </div>
+        <h1>Series Recientes</h1>
+        <div class="comic-container">
+            <div class="comic">
+                <a href="Manhwas\Solo Leveling - Manhwa - ARKscan\ver.html"><img src="Manhwas\Solo Leveling - Manhwa - ARKscan\solo_leveling.png" alt="Solo Leveling"></a>
+                <h3>Solo Leveling</h3>
+                <p>2023 - 24 capítulos</p>
+            </div>
+            <div class="comic">
+                <img src='images/shadows_of_the_void.jpg' alt="Shadows Of The Void">
+                <h3>Shadows Of The Void</h3>
+                <p>2023 - 12 capítulos</p>
+            </div>
+            <!-- Más series -->
+             
+        </div>
+
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

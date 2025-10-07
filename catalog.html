@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link href="css\styles.css" rel="stylesheet" type="text/css">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Catálogo</title>
+    
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="images\ARK LOGOP.png" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">ARK</span>
+                    <span class="profession">Scanlation</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>    
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" id="search-bar" placeholder="Buscar cómic..." onkeyup="searchComics()">
+                    <div id="search-results" class="search-results"></div>
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="catalog.html">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Catálogo</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="emision.html">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Emisión</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="login.html">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Iniciar Sesión</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="register.html">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Registrarse</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="admin.html">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Light mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                <li>
+                </li>
+            </div>
+        </div>
+
+    </nav>
+    <section class="home">
+        <div class="text">Catálogo</div>
+        <h1></h1>
+        <header>
+            <div class="top-bar">
+                <li class="search-box" onclick="toggleSearchBar()"><i class='bx bx-search icon'></i></li>
+                <input type="text" id="search-input" placeholder="Buscar en el catálogo" oninput="filterCatalog()">
+                <div id="search-results" class="search-results">
+                    <div class="search-button">
+                        <button onclick="searchComics()">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="search-bar">
+            <select id="category">
+                <option value="all">Todas las categorías</option>
+                <option value="comic">Comic</option>
+                <option value="novela">Novela</option>
+                <option value="manga">Manga</option>
+                <option value="manhua">Manhua</option>
+            </select>
+            <select id="genre">
+                <option value="all">Todos los géneros</option>
+                <option value="accion">Acción</option>
+                <option value="aventura">Aventura</option>
+                <option value="comedia">Comedia</option>
+                <!-- Más géneros según necesidad -->
+            </select>
+            <select id="year">
+                <option value="all">Todos los años</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <!-- Más años según necesidad -->
+            </select>
+            <select id="letter">
+                <option value="all">Todas las letras</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+                <option value="d">D</option>
+                <option value="e">E</option>
+                <option value="f">F</option> 
+                <option value="g">G</option>
+                <option value="h">H</option>
+                <option value="i">I</option>
+                <option value="j">J</option>
+                <option value="k">K</option>
+                <option value="l">L</option>
+                <option value="m">M</option>
+                <option value="n">N</option>
+                <option value="ñ">Ñ</option>
+                <option value="o">O</option>
+                <option value="p">P</option>
+                <option value="q">Q</option>
+                <option value="r">R</option>
+                <option value="s">S</option>
+                <option value="t">T</option>
+                <option value="u">U</option>
+                <option value="v">V</option>
+                <option value="w">W</option>
+                <option value="x">X</option>
+                <option value="y">Y</option>
+                <option value="z">Z</option>
+                <!-- Más letras según necesidad -->
+            </select>
+            <button onclick="filterCatalog()">Buscar</button>
+        </div>
+
+        <div class="comic-container">
+            <div class="comic" data-category="manga" data-genre="accion" data-year="2024" data-letter="s">
+                <a href="Manhwas\Solo Leveling - Manhwa - ARKscan\ver.html"><img src="Manhwas\Solo Leveling - Manhwa - ARKscan\solo_leveling.png" alt="Solo Leveling"></a>
+                <h2>Solo Leveling</h2>
+                <p>Acción, Aventura, Fantasía</p>
+            </div>
+            <div class="comic">
+                <img src="images/comic2.jpg" alt="Comic 2">
+                <h2>Comic 2</h2>
+                <p>Descripción del comic 2.</p>
+            </div>
+            <div class="comic">
+                <img src="images/comic2.jpg" alt="Comic 2">
+                <h2>Comic 2</h2>
+                <p>Descripción del comic 2.</p>
+            </div>
+            <div class="comic" data-category="manga" data-genre="accion" data-year="2024" data-letter="s">
+                <a href="Manhwas\Solo Leveling - Manhwa - ARKscan\ver.html"><img src="Manhwas\Solo Leveling - Manhwa - ARKscan\solo_leveling.png" alt="Solo Leveling"></a>
+                <h2>Solo Leveling</h2>
+                <p>Acción, Aventura, Fantasía</p>
+            </div>
+            <div class="comic">
+                <img src="images/comic2.jpg" alt="Comic 2">
+                <h2>Comic 2</h2>
+                <p>Descripción del comic 2.</p>
+            </div>
+            <div class="comic">
+                <img src="images/comic2.jpg" alt="Comic 2">
+                <h2>Comic 2</h2>
+                <p>Descripción del comic 2.</p>
+            </div>
+             <!-- Más cómics según necesidad -->
+        </div>
+    
+        
+    </section>
+    <script src="js\script.js"></script>
+
+</body>
+</html>
