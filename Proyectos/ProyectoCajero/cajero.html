@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="cajero.js" defer></script>
+</head>
+<body>
+    <div class="cajero">
+        <h2>Bienvenido, <span id="usuario"></span></h2>
+        <p>Saldo Actual: $<span id="saldo"></span></p>
+        <input type="number" id="monto" placeholder="Monto"><br>
+        <button id="btn-depositar" onclick="depositar()">💰 Depositar</button>
+        <button id="btn-retirar" onclick="retirar()">💸 Retirar</button>
+        <button id="btn-cerrar" onclick="cerrarSesion()">🔒 Cerrar Sesión</button>
+    </div>
+    <div id="modal-salida" class="modal">
+        <div class="modal-contenido">
+            <p>Sesión cerrada correctamente</p>
+        </div>
+    </div>
+    <h3>Historial de transacciones</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody id="historial-body"></tbody>
+    </table>
+
+    <button id="btn-borrar" class="borrar" onclick="borrarHistorial()">
+        🗑️ Borrar Historial
+    </button>
+</body>
+</html>

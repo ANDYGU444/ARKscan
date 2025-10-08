@@ -1,0 +1,221 @@
+                /* ------------------Notas en CSS------------------------ */
+                /* ------------------------------------------------------ */
+/* Estilos Generales */
+*{
+    /* Elimina el margen por defecto de todos los elementos */
+    margin: 0;
+    /* Elimina el relleno por defecto de todos los elementos */
+    padding: 0;
+    /* Asegura que el borde y el relleno se incluyan en el ancho y alto de la pagina */
+    box-sizing: border-box;
+}
+
+/* Estilos del Body */
+body {
+    /* Define la fuente principal para toda la pagina */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Crea un fondo con un degradado lineal, que va de color rojo a un naranja #se pueden varios colores*/
+    background: linear-gradient(100deg, #d64eff, #2367f9 );
+    /* Establece el color fuente por defecto */
+    color: #333;
+    /* Agrega un relleno de 100px alrededor del contenido */
+    padding: 100px;
+    /* Alinea el contenido del body al centro */    
+    text-align: center;
+}
+
+.container {
+    /* Se afecta solo el container para no afectar en div y poder manejar mas divs*/
+
+    /* Color del contenedor*/
+    background: #f5fbff;
+    /* borde color rojo */
+    border: 1px solid   #89898d;
+    /* esquinas redondeadas */
+    border-radius: 15px;
+    /* sombra al container para dar profundida */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0, 2);
+    /* ancho maximo del container */
+    max-width: 400px;
+    /* centra horizontalmente a la pagina el container */
+    margin: auto;
+    /* agrega relleno dentro del contenedor */
+    padding: 30px;
+    /* animacion llamada 'fadeIn' */
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2, h3 {
+    color: #131212;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="number"]{
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #131212;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button{
+    background: #ff4e50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0, 2);
+}
+
+button:hover{
+    background: #e60000;
+    transform: scale(1.05);
+}
+
+/* Estilos para la tabla de historial */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffffcc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+th {
+    background-color: #2367f9;
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Animación para filas nuevas */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nueva-transaccion {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Animación para eliminar usuario */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+.usuario-eliminado {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+
+/* 2. 🎨 Estilos para el modal en tu CS */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-contenido {
+    background: #4e008e;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-in-out;
+}
+
+
+button.borrar {
+    background: #6c757d;
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button.borrar:hover {
+    background: #495057;
+    transform: scale(1.05);
+}
+
+/* Animación de sacudida al borrar */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.boton-sacudida {
+    animation: shake 0.4s ease;
+}
+/* Animaciones específicas */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Clases animadas */
+.boton-pulse {
+    animation: pulse 0.4s ease;
+}
+
+.boton-slideOut {
+    animation: slideOut 0.5s ease forwards;
+}
+
+.boton-bounce {
+    animation: bounce 0.4s ease;
+}

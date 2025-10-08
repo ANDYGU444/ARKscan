@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonds.googleapis.com">
+    <link rel="preconnect" href="https://fonds.gstatic.com" crossoring>
+    <link href="https://fonds.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Login Cajero</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- para iniciar el comentario y para terminarlo --> 
+
+    <div class="container">
+        <h2>Cajero Automático</h2>
+        <!-- El placeholder es lo que sale en el espacio antes de escribir --> 
+        <input type="text" id="user" placeholder="Usuario"><br>
+        <input type="password" id="pin" placeholder="PIN"><br>
+        <!-- La etiqueta br da un espacio --> 
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="login()">Ingresar</button>
+        <p id="message"></p>
+    </div>
+
+    <script src="scrips.js"></script>
+
+    <footer>
+        <!-- Pie de Página --> 
+        <!-- Para el logo de copyright © es alt + 184 --> 
+        <p>© 2025 Cajero Automático. Todos los derechos reservados</p>
+    </footer>
+</body>
+
+
+</html>
