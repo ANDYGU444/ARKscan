@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Productos</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/idb@7/build/umd.js"></script>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Catálogo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="login.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <h1>Catálogo de Productos</h1>
+
+  <input type="text" id="buscador" placeholder="🔍 Buscar producto..." autocomplete="off">
+
+  <table id="tablaProductos">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody id="tablaCatalogo"></tbody>
+  </table>
+
+  <script type="module" src="js/scripts.js"></script>
+</body>
+</html>

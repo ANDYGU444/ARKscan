@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>🔐 Iniciar Sesión</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Inicio</a></li>
+      <li><a href="productos.html">🛍️ Catálogo</a></li>
+      <li><a href="contacto.html">📬 Contacto</a></li>
+      <li><a href="login.html">🔐 Admin</a></li>
+    </ul>
+  </nav>
+
+  <h1>🔐 Acceso al Panel de Administración</h1>
+
+  <form id="formLogin">
+    <input type="text" id="usuario" placeholder="👤 Usuario" required>
+    <input type="password" id="contrasena" placeholder="🔑 Contraseña" required>
+    <button type="submit">Ingresar</button>
+  </form>
+
+  <script>
+    document.getElementById('formLogin').addEventListener('submit', e => {
+      e.preventDefault();
+      const user = document.getElementById('usuario').value;
+      const pass = document.getElementById('contrasena').value;
+      if (user === 'admin' && pass === '1234') {
+        sessionStorage.setItem('autenticado', 'true');
+        location.href = 'admin.html';
+      } else {
+        alert('Usuario o contraseña incorrectos');
+      }
+    });
+  </script>
+</body>
+</html>

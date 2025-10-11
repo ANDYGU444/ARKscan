@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>🛠️ Administrar Productos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/idb@7/build/umd.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<script>
+  const body = document.querySelector('body');
+  const modeSwitch = document.querySelector('.toggle-switch');
+  const modeText = document.querySelector('.mode-text');
+
+  // Aplicar modo guardado al cargar
+  const savedMode = localStorage.getItem('modo');
+  if (savedMode === 'dark') {
+    body.classList.add('dark');
+    modeText.innerText = 'Dark Mode';
+  } else {
+    body.classList.remove('dark');
+    modeText.innerText = 'Light Mode';
+  }
+
+  // Evento de cambio de modo
+  modeSwitch.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    modeText.innerText = isDark ? 'Dark Mode' : 'Light Mode';
+    localStorage.setItem('modo', isDark ? 'dark' : 'light');
+  });
+</script>
+
+
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Catálogo</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="login.html">Admin</a></li>
+            <li class="mode">
+                <div class="sun-moon">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text">Light Mode</span>
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <button onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+
+    <h1>Panel de Administración</h1>
+
+    <form id="formularioProducto">
+        <input type="text" id="nombre" placeholder="📦 Nombre del producto" required>
+        <input type="text" id="descripcion" placeholder="📝 Descripción" required>
+        <input type="number" id="precio" placeholder="💰 Precio" required>
+        <input type="text" id="imagen" placeholder="📸 URL de la imagen" required>
+        <button type="submit">➕ Agregar Producto</button>
+    </form>
+
+  <table id="tablaAdmin">
+    <thead>
+      <tr>
+        <th>📸 Imagen</th>
+        <th>📦 Producto</th>
+        <th>📝 Descripción</th>
+        <th>💰 Precio</th>
+        <th>🗑️ Eliminar</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script type="module" src="js/admin.js"></script>
+  <script>
+    if (sessionStorage.getItem('autenticado') !== 'true') {
+      alert('Acceso restringido. Inicia sesión primero.');
+      location.href = 'login.html';
+    }
+    function cerrarSesion() {
+      sessionStorage.removeItem('autenticado');
+      location.href = 'index.html';
+    }
+  </script>
+
+</body>
+</html>
