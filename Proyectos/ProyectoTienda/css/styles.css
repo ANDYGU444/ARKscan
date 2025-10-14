@@ -7,6 +7,7 @@
 }
 
 /* === VARIABLES DE COLOR === */
+/* === VARIABLES DE COLOR MODO OSCURO === */
 :root {
   --color-fondo: #121212;
   --color-texto: #e0e0e0;
@@ -18,7 +19,7 @@
 }
 
 /* === MODO CLARO === */
-body.light-mode {
+body:not(.dark) {
   --color-fondo: #f5f5f5;
   --color-texto: #121212;
   --color-nav: #ffffff;
@@ -27,6 +28,7 @@ body.light-mode {
   --color-acento: #ff9800;
   --color-error: #e53935;
 }
+
 
 /* === GENERAL === */
 body {
@@ -353,4 +355,7 @@ body.dark .toggle-switch .switch {
 /* Asegura que no se superponga con otros ítems del menú */
 nav ul li.mode {
   margin-left: auto;
+}
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
 }

@@ -59,7 +59,7 @@ async function pintarLista() {
       <td><img src="${p.imagen}" alt="${p.nombre}" width="80"></td>
       <td>${p.nombre}</td>
       <td>${p.descripcion}</td>
-      <td>$${p.precio}</td>
+      <td>₡${p.precio}</td>
       <td><button onclick="eliminar(${p.id})">🗑️</button></td>`;
     listaEl.appendChild(tr);
   });

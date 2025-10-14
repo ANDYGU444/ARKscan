@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Catálogo de Productos</title>
+  <link rel="shortcut icon" href="luffy.jpg"> <!--===== Logo en nombre de pagina ===== -->
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://unpkg.com/idb@7/build/umd.js"></script>
 </head>
@@ -15,6 +16,17 @@
       <li><a href="productos.html">Catálogo</a></li>
       <li><a href="contacto.html">Contacto</a></li>
       <li><a href="login.html">Admin</a></li>
+
+      <li class="mode">
+        <div class="sun-moon">
+          <i class='bx bx-moon icon moon'></i>
+          <i class='bx bx-sun icon sun'></i>
+        </div>
+        <span class="mode-text text">Light Mode</span>
+        <div class="toggle-switch">
+          <span class="switch"></span>
+        </div>
+      </li>
     </ul>
   </nav>
 
@@ -35,5 +47,36 @@
   </table>
 
   <script type="module" src="js/scripts.js"></script>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const body = document.body;
+      const modeSwitch = document.querySelector('.toggle-switch');
+      const modeText = document.querySelector('.mode-text');
+
+      // === Aplicar modo guardado ===
+      const savedMode = localStorage.getItem('modo');
+      if (savedMode === 'dark') {
+        body.classList.add('dark');
+        modeText.innerText = 'Dark Mode';
+      } else {
+        body.classList.remove('dark');
+        modeText.innerText = 'Light Mode';
+      }
+
+      // === Cambiar modo manualmente ===
+      if (modeSwitch) {
+        modeSwitch.addEventListener('click', () => {
+          body.classList.toggle('dark');
+          const isDark = body.classList.contains('dark');
+          modeText.innerText = isDark ? 'Dark Mode' : 'Light Mode';
+          localStorage.setItem('modo', isDark ? 'dark' : 'light');
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
